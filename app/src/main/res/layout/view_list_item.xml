@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.dz.demo.data.model.Item" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:orientation="vertical">
+
+        <com.example.dz.demo.feature.main.views.SquareCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                imgUrl="@{item.photo}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|top"
+                android:src="@drawable/sold"
+                android:visibility="gone" />
+
+            <TextView
+                style="@style/black_14_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/item_price_background"
+                android:padding="5dp"
+                android:text="@{`$`+item.price}"
+                android:textColor="@android:color/white" />
+
+        </com.example.dz.demo.feature.main.views.SquareCardView>
+
+        <TextView
+            style="@style/regular_14_black_70op"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{item.name}" />
+
+    </LinearLayout>
+
+</layout>
